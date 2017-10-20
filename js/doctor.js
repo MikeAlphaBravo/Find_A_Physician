@@ -21,8 +21,8 @@ export class Doctor {
       let readable = JSON.parse(response);
       debugger;
       (readable.data).forEach(function(doctor) {
-        $("#output").append(`<div class="card"><h2><a target="_blank"  href="${data.profile.first_name}">${data.profile.last_name}</a></h2>
-          <img src="${data.prole.image_url}" /></a></div>`);
+        $("#output").append(`<div class="card"><h3>${doctor.profile.last_name}, ${doctor.profile.first_name}</h3>
+          <img src="${doctor.profile.image_url}" /></a></div>`);
       });
     }, function(error) {
       $("#output").text(`There was an error processing your request: ${error.message}`);

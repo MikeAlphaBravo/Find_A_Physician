@@ -7,7 +7,7 @@ $(document).ready(function() {
     $('#output').text('');
     let query = $('#query').val();
     let doctor = new Doctor();
-    let userin = `&q=${query}`;
+    let userin = `&query=${query}`;
     // debugger;
     doctor.apiCall(userin, apiKey);
   });

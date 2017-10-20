@@ -1,0 +1,36 @@
+body {
+  text-align: center;
+}
+
+h3 {
+  font: arial;
+}
+.card {
+  margin: auto;
+  margin-top: 30px;
+  padding: 30px;
+  width: 70%;
+  background-color: #F0F0F0;
+  border-radius: 15px;
+}
+
+.card h2{
+  margin-bottom: 10px;
+}
+
+a {
+  color: grey;
+  text-decoration: none;
+}
+
+.card img {
+  align-content: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 25px;
+}
+
+.jumbotron {
+  padding: 20px;
+  margin: 30px;
+}

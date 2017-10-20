@@ -24,7 +24,7 @@ export class Doctor {
           $("#output").append(`<div class="card"><h3>${doctor.profile.last_name}, ${doctor.profile.first_name}</h3>
           <img src="${doctor.profile.image_url}" /></a></div>`);
           (doctor.practices).forEach(function(childrenEntry) {
-            $("#output").append(`<div><h5>Locations in Portland:${childrenEntry.parse(visit_address)}</h5></div>`);
+            $("#output").append(`<div><h5>Locations in Portland:${childrenEntry.visit_address.street}</h5></div>`);
             // debugger;
           });
           // let readableInfo = JSON.parse(readable.data);

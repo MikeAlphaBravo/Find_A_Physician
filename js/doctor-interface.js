@@ -5,9 +5,10 @@ $(document).ready(function() {
   $("#form").submit(function() {
     event.preventDefault();
     $('#output').text('');
-    let ingredient = $('#ingredient').val();
+    let query = $('#query').val();
     let doctor = new Doctor();
-    let userin = `&q=${ingredient}`;
-    doctor.search2(userin, apiKey);
+    let userin = `&q=${query}`;
+    // debugger;
+    doctor.apiCall(userin, apiKey);
   });
 });

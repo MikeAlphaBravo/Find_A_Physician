@@ -21,11 +21,24 @@ export class Doctor {
       let readable = JSON.parse(response);
       if(readable.data.length != 0) {
         (readable.data).forEach(function(doctor) {
-          $("#output").append(`<div class="card"><h3>${doctor.profile.last_name}, ${doctor.profile.first_name}</h3>
+          //need to figure out how to use index for this
+          let uniqueIndex = `${doctor.profile.slug}`
+          $("#output").append(`<div class="card" id="mainCard-${uniqueIndex}"><h3>${doctor.profile.last_name}, ${doctor.profile.first_name}</h3>
           <img src="${doctor.profile.image_url}" /></a></div>`);
           (doctor.practices).forEach(function(childrenEntry) {
-            $("#output").append(`<div><h5>Locations in Portland:${childrenEntry.visit_address.street}</h5></div>`);
-            // debugger;
+            $("#mainCard-" + uniqueIndex).append(`<div>
+            <h5>Locations in Portland:<br> ${childrenEntry.visit_address.street}<br>
+            ${childrenEntry.visit_address.city},
+            ${childrenEntry.visit_address.state}
+            ${childrenEntry.visit_address.zip}</h5>
+            <h5>Website: ${childrenEntry.website}</h5>
+            <h5>Phone numbers: </h5>
+            </div>`);
+            (childrenEntry.phones).forEach(function(phone) {
+              debugger;
+              $("#mainCard-" + uniqueIndex).append(`<h5>${phone.type}: ${phone.number}</h5>`)
+            })
+            
           });
           // let readableInfo = JSON.parse(readable.data);
           // (readableInfo.practices).forEach(function(info) {

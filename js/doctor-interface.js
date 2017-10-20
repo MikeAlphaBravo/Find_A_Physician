@@ -8,7 +8,6 @@ $(document).ready(function() {
     let nameInput = $('#name').val();
     let queryInput = $('#query').val();
     let doctor = new Doctor();
-    // debugger;
     doctor.apiCall(nameInput, queryInput, apiKey);
   });
 });

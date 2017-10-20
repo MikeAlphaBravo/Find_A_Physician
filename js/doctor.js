@@ -26,22 +26,22 @@ export class Doctor {
           $("#output").append(`<div class="card" id="mainCard-${uniqueIndex}"><h3>${doctor.profile.last_name}, ${doctor.profile.first_name}</h3>
           <img src="${doctor.profile.image_url}" /></a></div>`);
           (doctor.practices).forEach(function(childrenEntry) {
-            $("#mainCard-" + uniqueIndex).append(`<div>
-            <h5>Locations in Portland:<br> ${childrenEntry.visit_address.street}<br>
+            $("#mainCard-" + uniqueIndex).append(`<hr><div>
+            <h5>Locations in Portland:</h5> <h6>${childrenEntry.visit_address.street}<br>
             ${childrenEntry.visit_address.city},
             ${childrenEntry.visit_address.state}
             ${childrenEntry.visit_address.zip}</h5>
-            <h5>Website: ${childrenEntry.website}</h5>
+            <h5>Website: ${childrenEntry.website}</h6>
             <h5>Phone numbers: </h5>
             </div>`);
             (childrenEntry.phones).forEach(function(phone) {
               // debugger;
-              $("#mainCard-" + uniqueIndex).append(`<h5>${phone.type}: ${phone.number}</h5>`)
+              $("#mainCard-" + uniqueIndex).append(`<h6>${phone.type}: ${phone.number}</h6>`)
             })
             if(doctor.practices.accepts_new_patients === true) {
-              $("#mainCard-" + uniqueIndex).append(`<h5>This doctor is currently accepting new patients</h5>`);
+              $("#mainCard-" + uniqueIndex).append(`<h6>This doctor is currently accepting new patients</h6>`);
             } else {
-              $("#mainCard-" + uniqueIndex).append(`<h5>This doctor is NOT currently accepting new patients</h5>`);
+              $("#mainCard-" + uniqueIndex).append(`<h6>This doctor is NOT currently accepting new patients</h6>`);
             }
           });
         });

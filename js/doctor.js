@@ -35,16 +35,15 @@ export class Doctor {
             <h5>Phone numbers: </h5>
             </div>`);
             (childrenEntry.phones).forEach(function(phone) {
-              debugger;
+              // debugger;
               $("#mainCard-" + uniqueIndex).append(`<h5>${phone.type}: ${phone.number}</h5>`)
             })
-            
+            if(doctor.practices.accepts_new_patients === true) {
+              $("#mainCard-" + uniqueIndex).append(`<h5>This doctor is currently accepting new patients</h5>`);
+            } else {
+              $("#mainCard-" + uniqueIndex).append(`<h5>This doctor is NOT currently accepting new patients</h5>`);
+            }
           });
-          // let readableInfo = JSON.parse(readable.data);
-          // (readableInfo.practices).forEach(function(info) {
-          //   debugger;
-          //   $("#output").append(`<h5>${info.website}</h5>`)
-          // });
         });
       } else {
         $("#output").append("Your search did not return any Doctors, please try again");

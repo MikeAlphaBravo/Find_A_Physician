@@ -1,5 +1,11 @@
 export class Doctor {
 
+
+  formatState() {
+    //takes zipcode from user, finds state and city and spits out st-city sytax to push into locationInput
+
+  }
+
   apiCall(name, query, location, apiKey) {
     let promise = new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
@@ -31,7 +37,7 @@ export class Doctor {
             ${practice.visit_address.city},
             ${practice.visit_address.state}
             ${practice.visit_address.zip}</h5>
-            <h5>Website: ${practice.website}</h6>
+            <h5>Website: <a target="_blank" href="${practice.website}">${practice.website}</a></h6>
             <h5>Phone numbers: </h5>
             </div>`);
             (practice.phones).forEach(function(phone) {

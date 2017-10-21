@@ -22,24 +22,25 @@ export class Doctor {
       if(readable.data.length != 0) {
         (readable.data).forEach(function(doctor) {
           //need to figure out how to use index for this
-          let uniqueIndex = `${doctor.profile.slug}`
+          let uniqueIndex = `${doctor.profile.slug}`;
           $("#output").append(`<div class="card" id="mainCard-${uniqueIndex}"><h3>${doctor.profile.last_name}, ${doctor.profile.first_name}</h3>
           <img src="${doctor.profile.image_url}" /></a></div>`);
-          (doctor.practices).forEach(function(childrenEntry) {
+          (doctor.practices).forEach(function(practice) {
             $("#mainCard-" + uniqueIndex).append(`<hr><div>
-            <h5>Locations in Portland:</h5> <h6>${childrenEntry.visit_address.street}<br>
-            ${childrenEntry.visit_address.city},
-            ${childrenEntry.visit_address.state}
-            ${childrenEntry.visit_address.zip}</h5>
-            <h5>Website: ${childrenEntry.website}</h6>
+            <h5>Locations in Portland:</h5> <h6>${practice.visit_address.street}<br>
+            ${practice.visit_address.city},
+            ${practice.visit_address.state}
+            ${practice.visit_address.zip}</h5>
+            <h5>Website: ${practice.website}</h6>
             <h5>Phone numbers: </h5>
             </div>`);
-            (childrenEntry.phones).forEach(function(phone) {
-              // debugger;
-              $("#mainCard-" + uniqueIndex).append(`<h6>${phone.type}: ${phone.number}</h6>`)
-            })
-            if(doctor.practices.accepts_new_patients === true) {
+            (practice.phones).forEach(function(phone) {
+              $("#mainCard-" + uniqueIndex).append(`<h6>${phone.type}: ${phone.number}</h6>`);
+            });
+            // debugger;
+            if(practice.accepts_new_patients === true) {
               $("#mainCard-" + uniqueIndex).append(`<h6>This doctor is currently accepting new patients</h6>`);
+              // debugger;
             } else {
               $("#mainCard-" + uniqueIndex).append(`<h6>This doctor is NOT currently accepting new patients</h6>`);
             }

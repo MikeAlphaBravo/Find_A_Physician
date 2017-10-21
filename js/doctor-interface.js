@@ -7,7 +7,8 @@ $(document).ready(function() {
     $('#output').text('');
     let nameInput = $('#name').val();
     let queryInput = $('#query').val();
+    let locationInput = $('#location').val();
     let doctor = new Doctor();
-    doctor.apiCall(nameInput, queryInput, apiKey);
+    doctor.apiCall(nameInput, queryInput, locationInput, apiKey);
   });
 });

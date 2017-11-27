@@ -33,7 +33,11 @@ _Create an app using an API call to BetterDoctor to search for medical providing
 
 User experience screenshots:
 
+Example search result:
+
 ![alt text](/img/example.png)
+
+Example error response: 
 
 ![alt text](/img/error.png)
 

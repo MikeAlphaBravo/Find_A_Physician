@@ -31,7 +31,7 @@ _Create an app using an API call to BetterDoctor to search for medical providing
 * `gulp serve`
 * _navigate your browser to localhost:3000_
 
-User experience screenshots:
+## User experience screenshots:
 
 Example search result:
 

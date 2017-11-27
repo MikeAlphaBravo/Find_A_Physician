@@ -1,5 +1,7 @@
 # _Doctor_Search_
 
+![alt text](/img/results.png)
+
 #### _Implementing API and Asynchrony in JavaScript, 10.20.2017_
 
 #### By _Michael A. Brooks_
@@ -18,16 +20,26 @@ _Create an app using an API call to BetterDoctor to search for medical providing
 
 ## Setup/Installation Requirements
 
-1. _clone project from GitHub.com_
-2. _in project directory via terminal run:_
-* _npm install_
-* _bower install_
-* _gulp build_
-* _gulp serve_
+* _clone project from GitHub.com_
+* _navigate to https://developer.betterdoctor.com/ and sign up for your free API key_
+* _create a .env file in your project root directory and copy in
+`exports.apiKey = "YOUR_API_KEY_HERE";`
+* _in project directory via terminal run:_
+* `npm install`
+* `bower install`
+* `gulp build`
+* `gulp serve`
+* _navigate your browser to localhost:3000_
+
+User experience screenshots:
+
+![alt text](/img/example.png)
+
+![alt text](/img/error.png)
 
 ## Known Bugs
 
-_..._
+_Location search needs rewritten to be able to take in input by zipcode.  Currently location works and returns correct results but has a very restrictive input of or-portland type formatting, not acceptable in user experience._
 
 ## Support and contact details
 
